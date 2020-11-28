@@ -1,6 +1,7 @@
 const form = document.getElementById("form");
 const input = document.getElementById("todo");
 const list = document.getElementById("list");
+let clearButton = document.getElementById("clear");
 
 
 // Récupération des objets de la todoList
@@ -63,11 +64,13 @@ function promptTask(obj, index){
             todoList[index].state = true;
             newItemText.classList = "todo__text todo__text--done";
             newItemCheck.classList = "todo__check todo__check--done";
+            updateItemsLeft(todoList);
         } else {
             obj.state = false;
             todoList[index].state = false;
             newItemText.classList = "todo__text";
             newItemCheck.classList = "todo__check";
+            updateItemsLeft(todoList);
         }
         localStorage.setItem("todo", JSON.stringify(todoList));
     })
@@ -101,11 +104,53 @@ form.addEventListener("submit", function(event){
     // On renvoie la liste au navigateur
     localStorage.setItem("todo", JSON.stringify(todoList));
 
+    // On update le compteur
+    updateItemsLeft(todoList);
+
     promptTask(inputValue, todoList.length-1);
 
     input.value = "";
 })
 
-// Fonction
+// EventListner sur le bouton clear Completed
+clearButton.addEventListener("click",function(e){
+    removeItemCompleted();
+})
 
-// TESTS
+// Suppression des éléments complétés
+function removeItemCompleted(){
+    let todoList = JSON.parse(localStorage.getItem("todo"));
+    let completed = todoList.filter(x => x.state == false);
+
+    todoList = completed;
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    if (todoList[0] == undefined){
+        list.innerHTML = "";
+    } else {
+        todoList.forEach(function(item, index){
+            list.innerHTML = "";
+            promptTask(item,index);
+        })
+    }
+    
+
+    console.log(completed);
+}
+
+
+// Update des items restants
+
+function updateItemsLeft(obj) {
+    if (obj == null){
+        domItemsLeft.textContent = "0 ";
+    }
+    let itemsLeft = obj.filter(x => x.state == false);
+    const domItemsLeft = document.getElementById('counter');
+    domItemsLeft.textContent = itemsLeft.length + " ";
+}
+
+// Ajout d'un eventListener sur le bouton Clear Completed
+
+
+
+updateItemsLeft(todoList);

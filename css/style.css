@@ -125,6 +125,9 @@ body {
 .todo__items:hover > .todo__check::before {
   background: linear-gradient(45deg, #77C8FD, #9F74E7);
 }
+.todo__items:hover > .todo__cross {
+  display: block;
+}
 .todo__bottom {
   padding: 14px;
 }
@@ -147,6 +150,13 @@ body {
 .todo__text--done {
   text-decoration: line-through;
   color: #c4c3ca;
+}
+.todo__clear {
+  cursor: pointer;
+}
+.todo__clear:hover {
+  font-weight: 500;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

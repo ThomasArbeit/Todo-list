@@ -86,6 +86,10 @@
             > .todo__check::before{
                 background: linear-gradient(45deg,#77C8FD, #9F74E7);
             }
+
+            > .todo__cross{
+                display: block;
+            }
         }
 
     }
@@ -116,6 +120,15 @@
         &--done{
             text-decoration: line-through;
             color: #c4c3ca;
+        }
+    }
+
+    &__clear{
+        cursor: pointer;
+
+        &:hover{
+            font-weight: 500;
+            color: black;
         }
     }
 }
