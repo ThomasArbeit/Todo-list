@@ -91,6 +91,9 @@ form.addEventListener("submit", function(event){
 
     // On récupère la todoList
     todoList = JSON.parse(localStorage.getItem("todo"));
+    if (todoList == null){
+        todoList = [];
+    }
 
     // On ajoute le nouvel élément à la todoList;
     todoList.push(inputValue);

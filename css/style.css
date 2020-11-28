@@ -76,7 +76,6 @@ body {
 }
 .todo__check--done {
   background-color: transparent;
-  background-image: url("./img/icon-check.svg");
 }
 .todo__check--done::before {
   position: absolute;
