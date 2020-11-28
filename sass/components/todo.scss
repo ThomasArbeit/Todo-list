@@ -1,0 +1,122 @@
+.todo{
+
+    position: relative;
+    
+    &__form{
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: var(--background-color-secondary);
+
+        border-radius: 4px;
+
+        padding: 14px;
+        margin-bottom: 16px;
+
+        z-index: 1;
+    }
+
+    &__check{
+        position: relative;
+        height: 20px;
+        width: 20px;
+        margin-right: 13px;
+        background-color: white;
+        border-radius: 50%;
+
+        &--done{
+            background-color: transparent;
+            background-image: url("./img/icon-check.svg");
+
+            &::before{
+                position: absolute;
+                content: "";
+
+                height: 100%;
+                width: 100%;
+                z-index: 5;
+                background: linear-gradient(135deg,#77C8FD, #9F74E7);
+            }
+        }
+
+
+        &::before{
+            position: absolute;
+            content: url(/img/icon-check.svg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #E7E7E9;
+            top:-2px;
+            left:-2px;
+            z-index: -1;
+        }
+    }
+
+    &__input{
+        display: block;
+        border: none;
+        width: 90%;
+
+        &:focus, &:active{
+            outline: none;
+        }
+    }
+
+    &__list{
+        background-color: var(--background-color-secondary);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    &__items{
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: var(--background-color-secondary);
+        border-bottom: 1px solid #c4c4c4;
+
+        padding: 14px;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover{
+            > .todo__check::before{
+                background: linear-gradient(45deg,#77C8FD, #9F74E7);
+            }
+        }
+
+    }
+
+    &__bottom{
+        padding: 14px;
+    }
+
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #B1B2B7;
+    }
+
+    &__cross{
+        position: absolute;
+        right: 14px;
+        fill: #c4c4c4;
+
+        height: 13px;
+    }
+
+    &__text{
+        color: var(--font-color);
+        font-size: 12px;
+
+        &--done{
+            text-decoration: line-through;
+            color: #c4c3ca;
+        }
+    }
+}

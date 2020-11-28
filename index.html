@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Todo App</title>
+</head>
+<body class="day">
+    <img class="background-image" src="./img/bg-mobile-light.jpg" alt="image de fond">
+    <div class="container">
+        <header class="header">
+            <h1 class="header__logo">TODO</h1>
+            <img src="./img/icon-moon.svg" alt="" class="header__switcher">
+        </header>
+        <div class="todo">
+            <!-- INPUT -->
+            <form class="todo__form" id="form">
+                <div class="todo__check"></div>
+                <input type="text" id="todo" class="todo__input" placeholder="Create a new todo...">
+            </form>
+
+            <!-- LIST -->
+            <div class="todo__list" >
+                <div id="list">
+                    
+                </div>
+                <div class="todo__bottom">
+                    <div class="todo__nav">
+                        <p class="todo__counter"><span id="counter"></span>items left</p>
+                        <p class="todo__clear" id="clear">Clear Completed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

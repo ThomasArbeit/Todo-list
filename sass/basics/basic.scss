@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins";
+}
+
+form{
+    font-size: 12px;
+}
+
+.background-image{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+
+    z-index: -1;
+}
+
+.day{
+    --font-color: #585864;
+    --background-color: #F4F4F6;
+    --background-color-secondary: white;
+}
+
+.night{
+    --font-color:white;
+    --background-color: #161620;
+    --background-color-secondary:#25273C;
+}
+
+body{
+    background-color: var(--background-color);
+}
