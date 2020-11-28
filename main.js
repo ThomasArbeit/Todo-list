@@ -127,8 +127,8 @@ function removeItemCompleted(){
     if (todoList[0] == undefined){
         list.innerHTML = "";
     } else {
+        list.innerHTML = "";
         todoList.forEach(function(item, index){
-            list.innerHTML = "";
             promptTask(item,index);
         })
     }
