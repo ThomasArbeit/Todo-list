@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Todo App</title>
 </head>
-<body class="day">
-    <img class="background-image" src="./img/bg-mobile-light.jpg" alt="image de fond">
+<body class="day" id="body">
+    <img id="bg-image" class="background-image"  alt="image de fond">
     <div class="container">
         <header class="header">
             <h1 class="header__logo">TODO</h1>
-            <img src="./img/icon-moon.svg" alt="" class="header__switcher">
+            <p class="header__switchText" id="textSwitcher">Thème Sombre</p>
+            <img src="./img/icon-moon.svg" alt="" class="header__switcher" id="switcher">
         </header>
         <div class="todo">
             <!-- INPUT -->
@@ -35,5 +36,8 @@
         </div>
     </div>
     <script src="./main.js"></script>
+    
+    <script src="./theme-switcher.js"></script>
+    <script src="./rwd.js"></script>
 </body>
 </html>

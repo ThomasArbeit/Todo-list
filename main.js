@@ -28,6 +28,7 @@ function promptTask(obj, index){
     // Création de la div contenant les éléments
     let newItem = document.createElement("div");
     newItem.classList = "todo__items";
+    newItem.draggable = true;
     newItem.id = index;
 
     // Ajout du rond

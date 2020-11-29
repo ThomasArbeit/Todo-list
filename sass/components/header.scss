@@ -1,4 +1,5 @@
 .header{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,5 +10,19 @@
         color: white;
         font-weight: 600;
         letter-spacing: 1rem;
+    }
+
+    &__switchText{
+        font-size: 12px;
+        position: absolute;
+        color: white;
+        right: 40px;
+    }
+
+    &__switcher{
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
     }
 }

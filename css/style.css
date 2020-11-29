@@ -22,12 +22,14 @@ form {
   --font-color: #585864;
   --background-color: #F4F4F6;
   --background-color-secondary: white;
+  --background-color-tertiary:#E7E7E9;
 }
 
 .night {
-  --font-color:white;
+  --font-color:#b4b4b4;
   --background-color: #161620;
   --background-color-secondary:#25273C;
+  --background-color-tertiary: #5f5f72;
 }
 
 body {
@@ -36,12 +38,14 @@ body {
 
 .container {
   width: 87%;
+  max-width: 720px;
   height: 100vh;
   margin: auto;
   padding-top: 40px;
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,6 +55,18 @@ body {
   color: white;
   font-weight: 600;
   letter-spacing: 1rem;
+}
+.header__switchText {
+  font-size: 12px;
+  position: absolute;
+  color: white;
+  right: 40px;
+}
+.header__switcher {
+  cursor: pointer;
+}
+.header__switcher:hover {
+  opacity: 0.8;
 }
 
 .todo {
@@ -71,7 +87,7 @@ body {
   height: 20px;
   width: 20px;
   margin-right: 13px;
-  background-color: white;
+  background-color: var(--background-color-secondary);
   border-radius: 50%;
 }
 .todo__check--done {
@@ -95,7 +111,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #E7E7E9;
+  background-color: var(--background-color-tertiary);
   top: -2px;
   left: -2px;
   z-index: -1;
@@ -104,6 +120,8 @@ body {
   display: block;
   border: none;
   width: 90%;
+  background: transparent;
+  color: var(--font-color);
 }
 .todo__input:focus, .todo__input:active {
   outline: none;
@@ -118,7 +136,7 @@ body {
   display: flex;
   align-items: center;
   background-color: var(--background-color-secondary);
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 1px solid var(--background-color-tertiary);
   padding: 14px;
   cursor: pointer;
   z-index: 1;
